@@ -26,7 +26,6 @@ public class Solution {
         try {
             Scanner in = new Scanner(System.in);
             int n = in.nextInt();
-            int steps = 0;
             int[] a = new int[n];
             int[] indxs = new int[n];
             for (int i = 0; i < n; i++) {
@@ -34,9 +33,7 @@ public class Solution {
                 indxs[i] = i+1;
             }
             boolean sorted = false;
-            int swaps = 0;
             while (!sorted) {
-                steps++;
                 sorted = true;
                 for (int i = 0; i < n-1; i++) {
                     if (!(a[i] <= a[i+1])) {
@@ -47,7 +44,6 @@ public class Solution {
                         a[i+1] = t;
                         indxs[i+1] = idx;
                         sorted = false;
-                        swaps++;
                     }
                 }
             }
